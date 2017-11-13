@@ -5,27 +5,21 @@ package quizz;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Formation
  */
 public class Question {
-    
+
     private String titreQuestion;
     private String reponse1;
     private String reponse2;
     private String reponse3;
     private String reponse4;
     private int numRepCorrect;
-    
-    
-
-    public void repondreQuestion(){
-    
-    }
 
     public String getTitreQuestion() {
+
         return titreQuestion;
     }
 
@@ -72,8 +66,5 @@ public class Question {
     public void setNumRepCorrect(int numRepCorrect) {
         this.numRepCorrect = numRepCorrect;
     }
-    
-   
 
-    
 }

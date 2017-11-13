@@ -17,7 +17,7 @@ public class PointdEntree {
     public static void main(String[] args) {
         
         Quizz quizz = new Quizz();
-        quizz.jouerQuizz();
+        quizz.menuPrincipal();
     }
     
 }
