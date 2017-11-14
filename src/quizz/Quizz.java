@@ -38,12 +38,16 @@ public class Quizz {
         //afficher le menu principal
         boolean quitter = false;
         while (quitter == false) {
-            System.out.println("Menu principal :\n"
-                    + "[1] Creer un nouveau quizz.\n"
-                    + "[2] Lancer le Quizz.\n"
-                    + "[3] Quitter.\n"
-                    + "Votre choix : ");
-
+            System.out.println(
+                      "-----------------------------\n"
+                    + "|      Menu principal :     |\n"
+                    + "|---------------------------|\n"
+                    + "|[1] Creer un nouveau quizz.|\n"
+                    + "|[2] Lancer le Quizz.       |\n"
+                    + "|[3] Quitter.               |\n"
+                    + "|---------------------------|\n"
+                    + "|       Votre choix :       |\n"
+                    + "-----------------------------\n");
             Scanner scan = new Scanner(System.in);
             String ChoixUtil = scan.nextLine();
             switch (ChoixUtil) {
@@ -73,12 +77,12 @@ public class Quizz {
             
             Question nouvelleQuestion =new Question();
 
-            System.out.println("Veuillez entrer votre question :");
+            System.out.println("Veuillez saisir votre question :");
             Scanner question = new Scanner(System.in);
             nouvelleQuestion.setTitreQuestion( question.nextLine() );
 
             
-            System.out.println("La nouvelle question sera : " + nouvelleQuestion);
+            System.out.println("La nouvelle question sera : " + nouvelleQuestion.getTitreQuestion() );
 
             System.out.println("Veuillez indiquer les differentes reponses possible :");
             
@@ -148,7 +152,7 @@ public class Quizz {
         Scanner clavier = new Scanner(System.in);
         String nomJoueur = clavier.nextLine();
 
-        //iterer (boucle) sur chaque questionActuelle de la liste des questionActuelle, pour l'afficher, 
+        //iterer (boucle) sur chaque questionAct de la liste des questionAct, pour l'afficher, 
         //demander les reponse et recalculer le score
         
         for (Question questionAct : questions) {
@@ -161,8 +165,13 @@ public class Quizz {
             Scanner clavierScanner = new Scanner(System.in);
             repJoueur = clavierScanner.nextInt();
             
-            
+            if(repJoueur == questionAct.getNumRepCorrect()){
+                score++ ;
+                
+            }            
             
         }
+        
+        System.out.println("Votre score "+ nomJoueur + " est de " + score + "/" + questions.size());
     }
 }
